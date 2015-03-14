@@ -3,11 +3,19 @@
     src: url("../font/city_birds.ttf") format('truetype');
 }
 
-.writeinc {
+.handwrite {
 	font-family: 'CityBirds' !important;
 	font-size: 40px !important;
 	line-height: 65px !important;
 	color: black;
 	margin: 0 !important;
 	padding: 0 !important;
+}
+
+.bar1 {
+	background-color: #13DAEC;
+}
+
+.bar2 {
+	background-color: #FF5E99;
 }

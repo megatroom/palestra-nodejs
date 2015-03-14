@@ -28,12 +28,20 @@
 				</section>
 				<section data-background="img/v8_logo_big.jpg" data-transition="zoom">
 					<h1>V8 JavaScript Runtime</h1>
-					<p class="fragment roll-in writeinc">
+					<p class="fragment roll-in handwrite">
 						Basicamente todo código escrito em C
 					</p>
 				</section>
+				<section data-transition="zoom">
+					<div>
+						<img src="img/ryandahl.jpg">
+					</div>
+					<q class="fragment roll-in">
+						"Seu modelo de concorrência é baseado em eventos."
+					</q>
+				</section>
 				<section>
-					<h1>2. Orientado a evento, I/O não bloqueante</h1>
+					<h1>2. Orientado a evento - I/O não bloqueante</h1>					
 				</section>
 				<section>
 					<p>Exemplo de código bloqueante:</p>
@@ -53,6 +61,50 @@ print(person.name);</code></pre>
 	console.log(data.person.name)
 });</code></pre>						
 					</div>
+				</section>
+				<section>
+					<p>2 downloads no modelo bloqueante:</p>
+					<table style="margin-bottom: 90px;">
+						<tr>
+							<td colspan="3" class="fragment roll-in bar1">&nbsp;</td>
+							<td colspan="5" class="fragment roll-in bar2">&nbsp;</td>
+							<td>&nbsp;</td>					
+						</tr>
+						<tr>
+							<td>1s</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>5s</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>10s</td>
+						</tr>						
+					</table>
+					<div class="fragment roll-in">
+						<p>2 downloads no modelo não bloqueante:</p>
+						<table>
+							<tr>								
+								<td colspan="5" class="fragment roll-in" style="padding: 0 !important;">
+									<div class="bar1" style="width:60%;">&nbsp;</div>
+									<div class="bar2" style="width:100%;">&nbsp;</div>
+								</td>
+								<td colspan="4">&nbsp;</td>					
+							</tr>
+							<tr>
+								<td>1s</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>5s</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>10s</td>
+							</tr>						
+						</table>
+					</div>					
 				</section>
 				<section>
 					<h1>3. Event Loop</h1>
