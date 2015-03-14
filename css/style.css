@@ -1,0 +1,13 @@
+@font-face {
+    font-family:"CityBirds";
+    src: url("../font/city_birds.ttf") format('truetype');
+}
+
+.writeinc {
+	font-family: 'CityBirds' !important;
+	font-size: 40px !important;
+	line-height: 65px !important;
+	color: black;
+	margin: 0 !important;
+	padding: 0 !important;
+}
