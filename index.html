@@ -1,129 +1,803 @@
 <!doctype html>
 <html lang="pt-Br">
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<meta name="description" content="7 motivos para escolher o Node.js">
-		<meta name="author" content="Bruno Nardini">
+        <meta name="description" content="7 motivos para escolher o Node.js">
+        <meta name="author" content="Bruno Nardini">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/league.css" id="theme">
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h1>7 motivos para escolher Node.js</h1>
-					<h3>Web Dev Summit 2015</h3>
-					<p>
-						<small>Criado por <a href="http://www.brunonardini.com.br" target="_blank">Bruno Nardini</a> / <a href="http://www.nardiniacademy.com" target="_blank">Nardini Academy</a></small>
-					</p>
-				</section>
-				<section>
-					<h1>1. JavaScript</h1>
-				</section>
-				<section data-background="img/v8_logo_big.jpg" data-transition="zoom">
-					<h1>V8 JavaScript Runtime</h1>
-					<p class="fragment roll-in handwrite">
-						Basicamente todo código escrito em C
-					</p>
-				</section>
-				<section data-transition="zoom">
-					<div>
-						<img src="img/ryandahl.jpg">
-					</div>
-					<q class="fragment roll-in">
-						"Seu modelo de concorrência é baseado em eventos."
-					</q>
-				</section>
-				<section>
-					<h1>2. Orientado a evento - I/O não bloqueante</h1>					
-				</section>
-				<section>
-					<p>Exemplo de código bloqueante:</p>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/league.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>7 motivos para escolher Node.js</h1>
+                    <h3>Web Dev Summit 2015</h3>
+                    <p>
+                        <small>Criado por <a href="http://www.brunonardini.com.br" target="_blank">Bruno Nardini</a> / <a href="http://www.nardiniacademy.com" target="_blank">Nardini Academy</a></small>
+                    </p>
+                </section>
+                <section data-background="#a3c2da" data-transition="zoom">
+                    <table>
+                        <tr>
+                            <td style="width: 50%; text-align: center;">
+                                <img src="img/perfil.png" style="width: 100%;" />
+                                <h2>Bruno Nardini</h2>
+                            </td>
+                            <td style="vertical-align: middle; text-align: center;">
+                                <div class="fragment roll-in">
+                                    <img src="img/hu.png" />
+                                </div>
+                                <div class="fragment roll-in">
+                                    <img src="img/na.png" />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+                <section data-background="img/sonic.png" data-transition="zoom">
+                    <h1 style="text-align: left;">Alerta de <br/> velocidade!</h1>
+                </section>
+                <section data-background="img/nodejs-bg.png" data-background-transition="zoom">
+                    &nbsp;
+                </section>
+                <section>
+                    <h1>1. É fortemente utilizado em grandes empresas</h1>
+                </section>
+                <section data-background="img/empresas.png" data-background-transition="zoom">
+                    &nbsp;
+                </section>
+                <section>
+                    <div><img src="img/linkedin600.png" /></div>
+                    <p>Linkedin mudou de <strong style="color: #d9534f;">Ruby On Rails</strong> para <strong style="color: #5cb85c;">Node.js</strong></p>
+                    <p>"Passamos de 30 para 3 servidores."</p>
+                    <p>"Atingimos uma velocidade 20x maior em alguns cenários."</p>
+                </section>
+                <section>
+                    <div><img src="img/paypal600.png" /></div>
+                    <p>Paypal mudou de <strong style="color: #f0ad4e;">Java</strong> para <strong style="color: #5cb85c;">Node.js</strong></p>
+                    <p>"Construído quase 2x mais rápido com menos pessoas."</p>
+                    <p>"Escrito em 33% menos linhas de código."</p>
+                    <p>"Construído com 40% menos arquivos."</p>
+                </section>
+                <section>
+                    <h1>2. JavaScript</h1>
+                </section>
+                <section>
+                    <div><img src="img/web.png" /></div>
+                </section>
+                <section>
+                    <div><img src="img/javascriptlibs.png" /></div>
+                </section>
+                <section>
+                    <h2>Isomorphic JavaScript</h2>
+                    <div><img src="img/isomorphic2.png" /></div>
+                </section>
+                <section data-background="img/v8.png" data-transition="zoom">
+                    <h1>V8 JavaScript Runtime</h1>
+                    <p class="fragment roll-in handwrite">
+                        Basicamente todo código escrito em C
+                    </p>
+                </section>
+                <section data-transition="zoom">
+                    <div>
+                        <img src="img/ryandahl.jpg">
+                    </div>
+                    <q class="fragment roll-in">
+                        "Não possui o conceito de thread [..] <br/>
+                        Seu modelo de concorrência é baseado em eventos."
+                    </q>
+                </section>
+                <section>
+                    <h1>3. Orientado a evento - I/O não bloqueante</h1>					
+                </section>
+                <section>
+                    <p>Exemplo de código bloqueante:</p>
 <pre><code class="javascript" data-trim contenteditable>data = downloadURL('http://some.api/people/1')
 person = JSON.decode(data)
 print(person.name);</code></pre>
-					<div class="fragment roll-in">
-						<p>Exemplo de código não bloqueante:</p>
+                    <div class="fragment roll-in">
+                        <p>Exemplo de código não bloqueante:</p>
 <pre><code class="javascript" data-trim contenteditable>http.get('http://some.api/people/1', function(err, res) {
 	var person = JSON.parse(res.data)
 	console.log(person.name)
 });</code></pre>						
-					</div>
-					<div class="fragment roll-in">
-						<p>Exemplo com jQuery:</p>
+                    </div>
+                    <div class="fragment roll-in">
+                        <p>Exemplo com jQuery:</p>
 <pre><code class="javascript" data-trim contenteditable>$.get('http://some.api/people/1', funciton(data) {
 	console.log(data.person.name)
 });</code></pre>						
-					</div>
-				</section>
-				<section>
-					<p>2 downloads no modelo bloqueante:</p>
-					<table style="margin-bottom: 90px;">
-						<tr>
-							<td colspan="3" class="fragment roll-in bar1">&nbsp;</td>
-							<td colspan="5" class="fragment roll-in bar2">&nbsp;</td>
-							<td>&nbsp;</td>					
-						</tr>
-						<tr>
-							<td>1s</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>5s</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>&nbsp;</td>
-							<td>10s</td>
-						</tr>						
-					</table>
-					<div class="fragment roll-in">
-						<p>2 downloads no modelo não bloqueante:</p>
-						<table>
-							<tr>								
-								<td colspan="5" class="fragment roll-in" style="padding: 0 !important;">
-									<div class="bar1" style="width:60%;">&nbsp;</div>
-									<div class="bar2" style="width:100%;">&nbsp;</div>
-								</td>
-								<td colspan="4">&nbsp;</td>					
-							</tr>
-							<tr>
-								<td>1s</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>5s</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>10s</td>
-							</tr>						
-						</table>
-					</div>					
-				</section>
-				<section>
-					<h1>3. Event Loop</h1>
-				</section>				
-			</div>
-		</div>
-	</body>
-	<script src="lib/js/head.min.js"></script>
-	<script src="js/reveal.js"></script>
-	<script>
-		Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-				transition: 'convex',
-				dependencies: [
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-	</script>
+                    </div>
+                </section>
+                <section>
+                    <p>2 downloads no modelo bloqueante:</p>
+                    <table style="margin-bottom: 90px;">
+                        <tr>
+                            <td colspan="3" class="fragment roll-in bar1">&nbsp;</td>
+                            <td colspan="5" class="fragment roll-in bar2">&nbsp;</td>
+                            <td>&nbsp;</td>					
+                        </tr>
+                        <tr>
+                            <td>1s</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>5s</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>10s</td>
+                        </tr>						
+                    </table>
+                    <div class="fragment roll-in">
+                        <p>2 downloads no modelo não bloqueante:</p>
+                        <table>
+                            <tr>								
+                                <td colspan="5" class="fragment roll-in" style="padding: 0 !important;">
+                                    <div class="bar1" style="width:60%;">&nbsp;</div>
+                                    <div class="bar2" style="width:100%;">&nbsp;</div>
+                                </td>
+                                <td colspan="4">&nbsp;</td>					
+                            </tr>
+                            <tr>
+                                <td>1s</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>5s</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>10s</td>
+                            </tr>						
+                        </table>
+                    </div>					
+                </section>
+                <section>
+                    <h1>3. Event Loop</h1>
+                </section>
+                <section>
+                    <p>Exemplo de um servidor HTTP <br/> que faz um download a cada requisição:</p>
+                </section>
+                <!-- ================ Event Loop - Inicio ================== -->
+                <section  data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">&nbsp;</div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">&nbsp;</div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>HTTP Server</div>
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">&nbsp;</div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>HTTP Server</div>
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">&nbsp;</div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res) <span class="fragment roll-in eventloop-alert">1</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">&nbsp;</div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>request</div>                                   
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>download</div> 
+                                <div>request</div>                                   
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>download</div>                                 
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>download</div>                                   
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                                <div>success(data)</div>
+                                <div>error(e)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">&nbsp;</div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                                <div>success(data)  <span class="fragment roll-in eventloop-alert">1</span></div>
+                                <div>error(e)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">&nbsp;</div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>success</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>success</div>
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">&nbsp;</div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <!-- =============== Event Loop - Parte 2 ================== -->
+                <section>
+                    <p>E se 5 requisições acontecessem ao mesmo tempo?</p>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">&nbsp;</div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)  <span class="fragment roll-in eventloop-alert">5</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">&nbsp;</div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">&nbsp;</div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>request</div>
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>download</div>
+                                <div>request</div>
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>download</div>
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>download</div>
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                                <div>success(data)</div>
+                                <div>error(e)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">&nbsp;</div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                                <div>success(data)</div>
+                                <div>error(e)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">&nbsp;</div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                                <div>success(data)</div>
+                                <div>error(e)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>request</div>
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                                <div>success(data)</div>
+                                <div>error(e)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>download</div>
+                                <div>request</div>
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                                <div>success(data)</div>
+                                <div>error(e)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>download</div>
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                                <div>success(data)</div>
+                                <div>error(e)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">
+                                <div>download</div>
+                            </div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                                <div>success(data)</div>
+                                <div>error(e)</div>
+                                <div>success(data)</div>
+                                <div>error(e)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <section data-transition="fade">
+                    <div class="eventloop-table">
+                        <div class="eventloop-column">
+                            <p class="eventloop-stack-title">Stack (functions)</p>
+                            <div class="eventloop-stack">&nbsp;</div>
+                        </div>
+                        <div class="eventloop-column">
+                            <p class="eventloop-webapi-title">Web APIs</p>
+                            <div class="eventloop-webapi">
+                                <div>request(req, res)</div>
+                                <div>success(data)</div>
+                                <div>error(e)</div>
+                                <div>success(data)</div>
+                                <div>error(e)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>{ Event Loop }</h2>
+                    <div>
+                        <p class="eventloop-queue-title">Stack Queue</p>
+                        <div class="eventloop-queue">
+                            <div>request</div>
+                            <div>request</div>
+                            <div>request</div>
+                        </div>
+                    </div>
+                </section>
+                <!-- ================ Event Loop - Fim ================== -->
+            </div>
+        </div>
+    </body>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'convex',
+            dependencies: [
+                {src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                        return !!document.querySelector('pre code');
+                    }, callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }}
+            ]
+        });
+    </script>
 </html>
